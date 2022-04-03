@@ -1,0 +1,179 @@
+==========conll03_train==========
+total_num_sentences: 14040
+total_num_tokens: 203617
+total_num_labels: 203617
+total_num_golds: 23219
+total_num_nonentity: 180398
+labels: ['LOC', 'MISC', 'ORG', 'PER']
+gold_length_distribution: {'1': 14575, '2': 7361, '3': 903, '4': 250, '5': 82, '6': 25, '7': 18, '8': 2, '9': 0, '10': 3, 'extra': 0}
+
+==========conll03_train_20.txt==========
+total_num_sentences: 2808
+total_num_tokens: 41515
+total_num_labels: 41515
+total_num_golds: 4700
+total_num_nonentity: 36815
+labels: ['LOC', 'MISC', 'ORG', 'PER']
+gold_length_distribution: {'1': 2972, '2': 1463, '3': 187, '4': 56, '5': 11, '6': 5, '7': 5, '8': 1, '9': 0, '10': 0, 'extra': 0}
+
+==========conll03_train_40.txt==========
+total_num_sentences: 5616
+total_num_tokens: 80692
+total_num_labels: 80692
+total_num_golds: 9284
+total_num_nonentity: 71408
+labels: ['LOC', 'MISC', 'ORG', 'PER']
+gold_length_distribution: {'1': 5780, '2': 3026, '3': 326, '4': 104, '5': 28, '6': 10, '7': 9, '8': 1, '9': 0, '10': 0, 'extra': 0}
+
+==========conll03_train_60.txt==========
+total_num_sentences: 8424
+total_num_tokens: 124049
+total_num_labels: 124049
+total_num_golds: 14108
+total_num_nonentity: 109941
+labels: ['LOC', 'MISC', 'ORG', 'PER']
+gold_length_distribution: {'1': 8808, '2': 4517, '3': 560, '4': 151, '5': 45, '6': 13, '7': 11, '8': 2, '9': 0, '10': 1, 'extra': 0}
+
+==========conll03_train_80.txt==========
+total_num_sentences: 11232
+total_num_tokens: 162809
+total_num_labels: 162809
+total_num_golds: 18516
+total_num_nonentity: 144293
+labels: ['LOC', 'MISC', 'ORG', 'PER']
+gold_length_distribution: {'1': 11572, '2': 5939, '3': 713, '4': 191, '5': 62, '6': 19, '7': 15, '8': 2, '9': 0, '10': 3, 'extra': 0}
+
+==========conll03_devel==========
+total_num_sentences: 3249
+total_num_tokens: 51358
+total_num_labels: 51358
+total_num_golds: 5860
+total_num_nonentity: 45498
+labels: ['LOC', 'MISC', 'ORG', 'PER']
+gold_length_distribution: {'1': 3689, '2': 1853, '3': 205, '4': 83, '5': 19, '6': 3, '7': 6, '8': 0, '9': 0, '10': 2, 'extra': 0}
+
+==========conll03_devel_20.txt==========
+total_num_sentences: 650
+total_num_tokens: 10332
+total_num_labels: 10332
+total_num_golds: 1176
+total_num_nonentity: 9156
+labels: ['LOC', 'MISC', 'ORG', 'PER']
+gold_length_distribution: {'1': 755, '2': 367, '3': 38, '4': 10, '5': 1, '6': 2, '7': 1, '8': 0, '9': 0, '10': 2, 'extra': 0}
+
+==========conll03_devel_40.txt==========
+total_num_sentences: 1300
+total_num_tokens: 20611
+total_num_labels: 20611
+total_num_golds: 2375
+total_num_nonentity: 18236
+labels: ['LOC', 'MISC', 'ORG', 'PER']
+gold_length_distribution: {'1': 1455, '2': 791, '3': 84, '4': 33, '5': 10, '6': 1, '7': 1, '8': 0, '9': 0, '10': 0, 'extra': 0}
+
+==========conll03_devel_60.txt==========
+total_num_sentences: 1949
+total_num_tokens: 30711
+total_num_labels: 30711
+total_num_golds: 3498
+total_num_nonentity: 27213
+labels: ['LOC', 'MISC', 'ORG', 'PER']
+gold_length_distribution: {'1': 2219, '2': 1096, '3': 111, '4': 54, '5': 11, '6': 2, '7': 3, '8': 0, '9': 0, '10': 2, 'extra': 0}
+
+==========conll03_devel_80.txt==========
+total_num_sentences: 2599
+total_num_tokens: 40932
+total_num_labels: 40932
+total_num_golds: 4712
+total_num_nonentity: 36220
+labels: ['LOC', 'MISC', 'ORG', 'PER']
+gold_length_distribution: {'1': 2974, '2': 1493, '3': 158, '4': 63, '5': 15, '6': 2, '7': 6, '8': 0, '9': 0, '10': 1, 'extra': 0}
+
+==========conll04_train==========
+total_num_sentences: 922
+total_num_tokens: 26525
+total_num_labels: 26525
+total_num_golds: 3315
+total_num_nonentity: 23210
+labels: ['LOC', 'MISC', 'ORG', 'PER']
+gold_length_distribution: {'1': 1480, '2': 1110, '3': 486, '4': 181, '5': 35, '6': 16, '7': 4, '8': 0, '9': 1, '10': 0, 'extra': 2}
+
+==========conll04_train_20.txt==========
+total_num_sentences: 184
+total_num_tokens: 5183
+total_num_labels: 5183
+total_num_golds: 616
+total_num_nonentity: 4567
+labels: ['LOC', 'MISC', 'ORG', 'PER']
+gold_length_distribution: {'1': 251, '2': 216, '3': 109, '4': 29, '5': 8, '6': 2, '7': 0, '8': 0, '9': 0, '10': 0, 'extra': 1}
+
+==========conll04_train_40.txt==========
+total_num_sentences: 369
+total_num_tokens: 10996
+total_num_labels: 10996
+total_num_golds: 1406
+total_num_nonentity: 9590
+labels: ['LOC', 'MISC', 'ORG', 'PER']
+gold_length_distribution: {'1': 638, '2': 480, '3': 180, '4': 78, '5': 20, '6': 6, '7': 3, '8': 0, '9': 0, '10': 0, 'extra': 1}
+
+==========conll04_train_60.txt==========
+total_num_sentences: 553
+total_num_tokens: 16070
+total_num_labels: 16070
+total_num_golds: 1951
+total_num_nonentity: 14119
+labels: ['LOC', 'MISC', 'ORG', 'PER']
+gold_length_distribution: {'1': 865, '2': 654, '3': 301, '4': 96, '5': 24, '6': 8, '7': 2, '8': 0, '9': 1, '10': 0, 'extra': 0}
+
+==========conll04_train_80.txt==========
+total_num_sentences: 738
+total_num_tokens: 21170
+total_num_labels: 21170
+total_num_golds: 2676
+total_num_nonentity: 18494
+labels: ['LOC', 'MISC', 'ORG', 'PER']
+gold_length_distribution: {'1': 1194, '2': 891, '3': 396, '4': 149, '5': 30, '6': 11, '7': 3, '8': 0, '9': 1, '10': 0, 'extra': 1}
+
+==========conll04_devel==========
+total_num_sentences: 231
+total_num_tokens: 6993
+total_num_labels: 6993
+total_num_golds: 875
+total_num_nonentity: 6118
+labels: ['LOC', 'MISC', 'ORG', 'PER']
+gold_length_distribution: {'1': 416, '2': 275, '3': 129, '4': 37, '5': 12, '6': 1, '7': 4, '8': 0, '9': 1, '10': 0, 'extra': 0}
+
+==========conll04_devel_20.txt==========
+total_num_sentences: 46
+total_num_tokens: 1273
+total_num_labels: 1273
+total_num_golds: 163
+total_num_nonentity: 1110
+labels: ['LOC', 'MISC', 'ORG', 'PER']
+gold_length_distribution: {'1': 71, '2': 52, '3': 28, '4': 9, '5': 2, '6': 0, '7': 1, '8': 0, '9': 0, '10': 0, 'extra': 0}
+
+==========conll04_devel_40.txt==========
+total_num_sentences: 92
+total_num_tokens: 2675
+total_num_labels: 2675
+total_num_golds: 341
+total_num_nonentity: 2334
+labels: ['LOC', 'MISC', 'ORG', 'PER']
+gold_length_distribution: {'1': 149, '2': 108, '3': 58, '4': 15, '5': 9, '6': 1, '7': 0, '8': 0, '9': 1, '10': 0, 'extra': 0}
+
+==========conll04_devel_60.txt==========
+total_num_sentences: 139
+total_num_tokens: 4437
+total_num_labels: 4437
+total_num_golds: 544
+total_num_nonentity: 3893
+labels: ['LOC', 'MISC', 'ORG', 'PER']
+gold_length_distribution: {'1': 254, '2': 172, '3': 81, '4': 24, '5': 8, '6': 1, '7': 4, '8': 0, '9': 0, '10': 0, 'extra': 0}
+
+==========conll04_devel_80.txt==========
+total_num_sentences: 185
+total_num_tokens: 5622
+total_num_labels: 5622
+total_num_golds: 701
+total_num_nonentity: 4921
+labels: ['LOC', 'MISC', 'ORG', 'PER']
+gold_length_distribution: {'1': 329, '2': 224, '3': 98, '4': 35, '5': 10, '6': 0, '7': 4, '8': 0, '9': 1, '10': 0, 'extra': 0}
