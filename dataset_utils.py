@@ -110,10 +110,10 @@ def get_input_examples(filepath):
 
 
 def get_prompts(input_example):
-    label_map = {"LOC": "location", "PER": "person", "ORG": "organization", "MISC": "other"}
+    label_map = {"LOC": "a location", "PER": "a person", "ORG": "an organization", "MISC": "an other"}
     templates = [
         {
-            "pos": "<token_span> is a/an <mask> entity .",
+            "pos": "<token_span> is <mask> entity .",
             "neg": "<token_span> is not a named entity ."
         },
         {

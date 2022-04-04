@@ -158,22 +158,22 @@ def get_entities_bio(seq):
         seq = [item for sublist in seq for item in sublist + ['O']]
     chunks = []
     chunk = [-1, -1, -1]
-    for indx, tag in enumerate(seq):
+    for index, tag in enumerate(seq):
         if tag.startswith("B-"):
             if chunk[2] != -1:
                 chunks.append(chunk)
             chunk = [-1, -1, -1]
-            chunk[1] = indx
+            chunk[1] = index
             chunk[0] = tag.split('-')[1]
-            chunk[2] = indx
-            if indx == len(seq) - 1:
+            chunk[2] = index
+            if index == len(seq) - 1:
                 chunks.append(chunk)
         elif tag.startswith('I-') and chunk[1] != -1:
             _type = tag.split('-')[1]
             if _type == chunk[0]:
-                chunk[2] = indx
+                chunk[2] = index
 
-            if indx == len(seq) - 1:
+            if index == len(seq) - 1:
                 chunks.append(chunk)
         else:
             if chunk[2] != -1:

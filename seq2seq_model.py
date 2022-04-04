@@ -34,7 +34,7 @@ from transformers import (
     get_linear_schedule_with_warmup, EncoderDecoderModel, AutoModelForTokenClassification,
 )
 
-from lib.seq2seq_utils import Seq2SeqDataset, SimpleSummarizationDataset
+from seq2seq_utils import Seq2SeqDataset, SimpleSummarizationDataset
 
 try:
     import wandb
