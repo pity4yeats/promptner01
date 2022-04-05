@@ -13,7 +13,7 @@ device = torch.device('cuda:0' if use_cuda else 'cpu')
 tokenizer = BartTokenizer.from_pretrained('facebook/bart-large')
 
 
-def train(batch_size, epochs, output_dir, train_dataset, devel_dataset):
+def train(batch_size, epochs, output_dir, best_model_dir, train_dataset, devel_dataset):
     logging.basicConfig(level=logging.INFO)
     transformers_logger = logging.getLogger("transformers")
     transformers_logger.setLevel(logging.WARNING)
@@ -26,7 +26,7 @@ def train(batch_size, epochs, output_dir, train_dataset, devel_dataset):
     model_args = {
         "reprocess_input_data": True, "overwrite_output_dir": True, "use_multiprocessing": False,
         "max_seq_length": 50, "train_batch_size": batch_size, "num_train_epochs": epochs,
-        "save_eval_checkpoints": False, "save_model_every_epoch": False,
+        "save_eval_checkpoints": False, "save_model_every_epoch": False, "best_model_dir": best_model_dir,
         "evaluate_during_training": True, "evaluate_generated_text": True, "evaluate_during_training_verbose": True,
         "max_length": 25, "manual_seed": 4, "save_steps": 11898, "gradient_accumulation_steps": 8,
         "output_dir": output_dir,
