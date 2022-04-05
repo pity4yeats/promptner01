@@ -18,7 +18,7 @@ for portion in portions:
 # Inference CoNLL2003
 for portion in portions:
     test_dataset = os.path.join('./data/original/CoNLL03/test.txt')
-    model_path = os.path.join('./saved_models', 'conll03_{}'.format(portion))
+    model_path = os.path.join('./saved_models', 'conll2003_{}'.format(portion))
     model = transformers.BartForConditionalGeneration.from_pretrained(model_path)
     print('\n==========Evaluating CoNLL2003_{}=========='.format(portion))
     evaluate(model, test_dataset)

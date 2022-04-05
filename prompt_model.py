@@ -80,7 +80,7 @@ def predict(model, tokens):
     i = 0
     for i in range(len(tokens)):
         ith_ngram = ngram(tokens, i)
-        entities = predict_kernel(model, tokenizer, ith_ngram, tokens, i)
+        entities = predict_kernel(model, ith_ngram, tokens, i)
         # print(f'{entities=}')
         if entities[1] >= len(tokens):
             entities[1] = len(tokens) - 1
