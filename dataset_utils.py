@@ -312,15 +312,15 @@ def build_dataset_templates():
         },
     ]
 
-    for i in range(9, 10):
+    for i in range(10):
         template = templates[i]
         for dataset_name, filepath in original.items():
             dataset = get_input_examples(filepath)
             print("\n=========={}==========".format(dataset_name))
             describe_dataset(dataset)
+            idx = f'{i+1}'.zfill(2)
             save_dataset(dataset,
-                         # os.path.join('data/processed/template0{}'.format(i+1), dataset_name),
-                         os.path.join('data/processed/template10', dataset_name),
+                         os.path.join('data/processed/template{}'.format(idx), dataset_name),
                          template)
             portions = [20, 40, 60, 80]
             size = len(dataset)
@@ -329,8 +329,8 @@ def build_dataset_templates():
                 tmp_dataset_name = '{}_{}.txt'.format(dataset_name, portion)
                 print("\n=========={}==========".format(tmp_dataset_name))
                 describe_dataset(tmp_dataset)
-                save_dataset(dataset,
-                             os.path.join('data/processed/template10', tmp_dataset_name),
+                save_dataset(tmp_dataset,
+                             os.path.join('data/processed/template{}'.format(idx), tmp_dataset_name),
                              template)
 
 

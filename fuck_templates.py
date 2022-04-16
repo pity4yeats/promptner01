@@ -8,8 +8,6 @@
 # Usage:
 #   python fuck_templates.py conll03 template02
 
-import os
-os.chdir('/content/drive/MyDrive/fuck-templates/code_dir')
 from prompt_model import *
 import sys
 
@@ -19,10 +17,11 @@ batch_size = 32
 # template_path = './data/processed/template06'   # modify this to use different templates
 
 dataset = sys.argv[1]
-template_path = os.path.join('./data/processed/', sys.argv[2])
+template = sys.argv[2]
 
-output_dir = os.path.join('./saved_models', dataset)
-best_model_dir = os.path.join('./saved_models', dataset, 'best_model')
+template_path = os.path.join('./data/processed/', template)
+output_dir = os.path.join('./saved_models', dataset, template)
+best_model_dir = os.path.join('./saved_models', dataset, template, 'best_model')
 train_dataset = os.path.join(template_path, '{}_train'.format(dataset))
 devel_dataset = os.path.join(template_path, '{}_devel'.format(dataset))
 
