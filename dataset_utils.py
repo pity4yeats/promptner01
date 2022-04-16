@@ -109,35 +109,9 @@ def get_input_examples(filepath):
     return input_examples
 
 
-def get_prompts(input_example):
+def get_prompts(input_example, template):
     label_map = {"LOC": "a location", "PER": "a person", "ORG": "an organization", "MISC": "an other"}
-    templates = [
-        {
-            "pos": "<token_span> is <mask> entity .",
-            "neg": "<token_span> is not a named entity ."
-        },
-        {
-            "pos": "::: <token_span> == <mask> :::",
-            "neg": "::: <token_span> == none :::"
-        },
-        {
-            "pos": "The entity type of <token_span> is <mask> .",
-            "neg": "The entity type of <token_span> is none entity ."
-        },
-        {
-            "pos": "<token_span> belongs to <mask> category .",
-            "neg": "<token_span> belongs to none category ."
-        },
-        {
-            "pos": "<token_span> should be tagged as <mask> .",
-            "neg": "<token_span> should be tagged as none entity ."
-        },
-        {
-            "pos": "<u1> <u2> <u3> <token_span> <u4> <u5> <u6> <mask> <u7> <u8> <u9> <u10>",
-            "neg": "<u1> <u2> <u3> <token_span> <u4> <u5> <u6> <u7> <u8> <mask> <u9> <u10>"
-        },
-    ]
-    template = templates[0]
+    # template = templates[0]
     sentence = input_example.sentence
     golds = input_example.golds
     tokens = sentence.split(' ')
@@ -173,12 +147,12 @@ def get_prompts(input_example):
     return prompts
 
 
-def save_dataset(dataset, filepath):
+def save_dataset(dataset, filepath, template):
     # @dataset: A list of InputExamples
     # @filepath: Target file path to save the dataset
     panda_data = []
     for input_example in dataset:
-        prompts = get_prompts(input_example)
+        prompts = get_prompts(input_example, template)
         for pos_prompt in prompts['pos']:
             panda_data.append((input_example.sentence, pos_prompt))
         for neg_prompt in prompts['neg']:
@@ -266,15 +240,87 @@ def build_dataset():
         print("\n=========={}==========".format(dataset_name))
         describe_dataset(dataset)
         # Save the complete dataset to file
-        save_dataset(dataset, os.path.join('data/processed/', dataset_name))
+        # save_dataset(dataset, os.path.join('data/processed/template01', dataset_name))
 
-        for portion in portions:
-            tmp_dataset = random.sample(dataset, round(size * portion / 100))
-            tmp_dataset_name = '{}_{}.txt'.format(dataset_name, portion)
-            print("\n=========={}==========".format(tmp_dataset_name))
-            describe_dataset(tmp_dataset)
-            save_dataset(tmp_dataset, os.path.join('data/processed/', tmp_dataset_name))
+        # for portion in portions:
+        #     tmp_dataset = random.sample(dataset, round(size * portion / 100))
+        #     tmp_dataset_name = '{}_{}.txt'.format(dataset_name, portion)
+        #     print("\n=========={}==========".format(tmp_dataset_name))
+        #     describe_dataset(tmp_dataset)
+        #     save_dataset(tmp_dataset, os.path.join('data/processed/', tmp_dataset_name))
 
 
-# if __name__ == '__main__':
-#     build_dataset()
+def build_dataset_templates():
+    original = {
+        "conll03_train": "data/original/CoNLL03/train.txt",
+        "conll03_devel": "data/original/CoNLL03/devel.txt",
+        # "conll03_test": "data/original/CoNLL03/test.txt",
+
+        "conll04_train": "data/original/CoNLL04/train.txt",
+        "conll04_devel": "data/original/CoNLL04/devel.txt",
+        # "conll04_test": "data/original/CoNLL04/test.txt",
+    }
+    templates = [
+        {
+            "pos": "<token_span> is <mask> .",
+            "neg": "<token_span> is not an entity .",
+        },
+        {
+            "pos": "TL;DR , <token_span> is <mask> entity .",
+            "neg": "TL;DR , <token_span> is not a named entity .",
+        },
+        {
+            "pos": "<token_span> is <mask> entity , right ? Yes .",
+            "neg": "<token_span> is not a named entity, right ? Sure ."
+        },
+        {
+            "pos": "<token_span> can be a named entity , and it's <mask> entity .",
+            "neg": "<token_span> cannot be a named entity .",
+        },
+        {
+            "pos": "What entity would you call <token_span> ? <mask> .",
+            "neg": "Is <token_span> a named entity ? No .",
+        },
+        {
+            "pos": "<token_span> == <mask> .",
+            "neg": "<token_span> == None .",
+        },
+        {
+            "pos": "<token_span> is <mask> entity .",
+            "neg": "<token_span> is not a named entity ."
+        },
+        {
+            "pos": "::: <token_span> == <mask> :::",
+            "neg": "::: <token_span> == none :::"
+        },
+        {
+            "pos": "The entity type of <token_span> is <mask> .",
+            "neg": "The entity type of <token_span> is none entity ."
+        },
+        {
+            "pos": "<token_span> belongs to <mask> category .",
+            "neg": "<token_span> belongs to none category ."
+        },
+        {
+            "pos": "<token_span> should be tagged as <mask> .",
+            "neg": "<token_span> should be tagged as none entity ."
+        },
+        {
+            "pos": "<u1> <u2> <u3> <token_span> <u4> <u5> <u6> <mask> <u7> <u8> <u9> <u10>",
+            "neg": "<u1> <u2> <u3> <token_span> <u4> <u5> <u6> <u7> <u8> <mask> <u9> <u10>"
+        },
+    ]
+
+    for i in range(6):
+        template = templates[i]
+        for dataset_name, filepath in original.items():
+            dataset = get_input_examples(filepath)
+            print("\n=========={}==========".format(dataset_name))
+            describe_dataset(dataset)
+            save_dataset(dataset,
+                         os.path.join('data/processed/template0{}'.format(i+1), dataset_name),
+                         template)
+
+
+if __name__ == '__main__':
+    build_dataset_templates()
