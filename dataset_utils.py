@@ -69,7 +69,8 @@ def get_golds(sentence, labelseq):
                 gold_entities[gold_entity.rstrip()] = labels[i - 1][2:]
                 gold_entity = ''
         else:
-            print(f'{tokens[i]=}\n{labels[i]=}')
+            # print(f'{tokens[i]=}\n{labels[i]=}')
+            print('token: {}\nlabel: {}'.format(tokens[i], labels[i]))
             sys.exit('Expecting B/I/O, instead got {}'.format(label[0]))
     return gold_entities
 
