@@ -290,10 +290,6 @@ def build_dataset_templates():
             "neg": "<token_span> is not a named entity ."
         },
         {
-            "pos": "::: <token_span> == <mask> :::",
-            "neg": "::: <token_span> == none :::"
-        },
-        {
             "pos": "The entity type of <token_span> is <mask> .",
             "neg": "The entity type of <token_span> is none entity ."
         },
@@ -306,20 +302,35 @@ def build_dataset_templates():
             "neg": "<token_span> should be tagged as none entity ."
         },
         {
+            "pos": "::: <token_span> == <mask> :::",
+            "neg": "::: <token_span> == none :::"
+        },
+        {
             "pos": "<u1> <u2> <u3> <token_span> <u4> <u5> <u6> <mask> <u7> <u8> <u9> <u10>",
             "neg": "<u1> <u2> <u3> <token_span> <u4> <u5> <u6> <u7> <u8> <mask> <u9> <u10>"
         },
     ]
 
-    for i in range(6):
+    for i in range(9, 10):
         template = templates[i]
         for dataset_name, filepath in original.items():
             dataset = get_input_examples(filepath)
             print("\n=========={}==========".format(dataset_name))
             describe_dataset(dataset)
             save_dataset(dataset,
-                         os.path.join('data/processed/template0{}'.format(i+1), dataset_name),
+                         # os.path.join('data/processed/template0{}'.format(i+1), dataset_name),
+                         os.path.join('data/processed/template10', dataset_name),
                          template)
+            portions = [20, 40, 60, 80]
+            size = len(dataset)
+            for portion in portions:
+                tmp_dataset = random.sample(dataset, round(size * portion / 100))
+                tmp_dataset_name = '{}_{}.txt'.format(dataset_name, portion)
+                print("\n=========={}==========".format(tmp_dataset_name))
+                describe_dataset(tmp_dataset)
+                save_dataset(dataset,
+                             os.path.join('data/processed/template10', tmp_dataset_name),
+                             template)
 
 
 if __name__ == '__main__':
