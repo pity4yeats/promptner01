@@ -333,5 +333,5 @@ def build_dataset_templates():
                              template)
 
 
-if __name__ == '__main__':
-    build_dataset_templates()
+# if __name__ == '__main__':
+#     build_dataset_templates()
