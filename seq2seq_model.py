@@ -451,7 +451,7 @@ class Seq2SeqModel:
                     loss = loss.mean()  # mean() to average on multi-gpu parallel training
                 current_loss = loss.item()
 
-                if step % 50 == 0:
+                if step % 250 == 0:
                     print(f"Epochs {epoch_number}/{args.num_train_epochs}. Steps {step}/{t_total}. Running Loss: {current_loss:9.4f}")
 
                 if args.gradient_accumulation_steps > 1:

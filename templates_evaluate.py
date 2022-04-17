@@ -15,5 +15,5 @@ for portion in portions:
     portion = str(portion)
     model_path = os.path.join('./saved_models', dataset, template, portion)
     model = transformers.BartForConditionalGeneration.from_pretrained(model_path)
-    print('\n\n\n\n\n--------------------------------\nEvaluating: {}/{}/{}\n'.format(template, dataset, portion))
+    print('\n\n\n\n\n--------------------------------\nEvaluating: {}/{}/{}\n'.format(dataset, template, portion))
     evaluate(model, test_dataset)

@@ -36,5 +36,5 @@ for portion in portions:
     train_dataset = os.path.join(template_path, '{}_train_{}.txt'.format(dataset, portion))
     devel_dataset = os.path.join(template_path, '{}_devel_{}.txt'.format(dataset, portion))
 
-    print('\n\n\n\n\n--------------------------------\nTraining: {}/{}/{}\n'.format(template_path, dataset, portion))
+    print('\n\n\n\n\n--------------------------------\nTraining: {}/{}/{}\n'.format(dataset, template, portion))
     train(batch_size, epochs, output_dir, best_model_dir, train_dataset, devel_dataset)
