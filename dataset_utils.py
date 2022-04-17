@@ -225,7 +225,7 @@ def describe_dataset(dataset, print_sample=False):
 def build_dataset():
     original = {
         "conll03_train": "data/original/CoNLL03/train.txt",
-        "conll03_devel": "data/original/CoNLL03/devel.txt",
+        "conll03_devel_100.txt": "data/original/CoNLL03/devel.txt",
         # "conll03_test": "data/original/CoNLL03/test.txt",
 
         "conll04_train": "data/original/CoNLL04/train.txt",
@@ -254,7 +254,7 @@ def build_dataset():
 def build_dataset_templates():
     original = {
         "conll03_train": "data/original/CoNLL03/train.txt",
-        "conll03_devel": "data/original/CoNLL03/devel.txt",
+        "conll03_devel_100.txt": "data/original/CoNLL03/devel.txt",
         # "conll03_test": "data/original/CoNLL03/test.txt",
 
         "conll04_train": "data/original/CoNLL04/train.txt",

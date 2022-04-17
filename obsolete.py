@@ -223,7 +223,7 @@ def inference(test_data):
 
 if __name__ == '__main__':
     conll03_train_file = 'data/tmp/conll03_train.csv'
-    conll03_devel_file = 'data/tmp/conll03_devel.csv'
+    conll03_devel_file = 'data/tmp/conll03_devel_100.txt.csv'
     conll03_test_file = 'data/tmp/conll03_test.txt'
     conll04_train_file = 'data/tmp/conll04_train.csv'
     conll04_devel_file = 'data/tmp/conll04_devel.csv'

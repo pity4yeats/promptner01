@@ -8,6 +8,22 @@
 # Usage:
 #   python fuck_templates.py conll03 template02
 
+'''
+
+I have four machines, each running one method. Each one holding 10 training and 10 inference.
+
+That'll do for the other template's results.
+'''
+
+
+# --->Training<---
+# @dataset_name: conll03_20.txt, conll04_80.txt, conll04_100.txt
+# @template: template03, template05
+
+# --->Inference<---
+
+
+
 from prompt_model import *
 import sys
 
