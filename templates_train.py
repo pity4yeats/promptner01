@@ -30,10 +30,11 @@ portions = [20, 40, 60, 80, 100]
 template_path = os.path.join('./data/processed/', template)
 
 for portion in portions:
+    portion = str(portion)
     output_dir = os.path.join('./saved_models', dataset, template, portion)
     best_model_dir = os.path.join(output_dir, 'best_model')
     train_dataset = os.path.join(template_path, '{}_train_{}.txt'.format(dataset, portion))
     devel_dataset = os.path.join(template_path, '{}_devel_{}.txt'.format(dataset, portion))
 
-    print('\n\n\n\n\n--------------------------------\nTraining: {}/{}\n'.format(template_path, dataset))
+    print('\n\n\n\n\n--------------------------------\nTraining: {}/{}/{}\n'.format(template_path, dataset, portion))
     train(batch_size, epochs, output_dir, best_model_dir, train_dataset, devel_dataset)

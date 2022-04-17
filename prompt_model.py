@@ -53,8 +53,8 @@ def evaluate(model, test_dataset):
 
     pbar = tqdm(total=len(dataset))
     for step, data in enumerate(dataset):
-        labels = data.labelseq.split(' ').rstrip()
-        tokens = data.sentence.split(' ').rstrip()
+        labels = data.labelseq.rstrip().split(' ')
+        tokens = data.sentence.rstrip().split(' ')
         targets.append(labels)
         # The model and tokenizer are passed all the way down to the predict_kernel
         predicts.append(predict(model, tokens))
